@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/cmake-build-debug"
+			"value" : "c:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation"
+			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/ImplementatioOfAnAudioplayerSimulation"
+			"value" : "C:/Program Files (x86)/ImplementationOfTheMobilePhoneSimulationProgram"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -687,7 +687,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/75BD~1/Desktop/18A4~1/2F5B~1/CLION2~1.4/bin/ninja/win/x64/ninja.exe"
+			"value" : "C:/Users/\u0418\u043b\u044c\u044f/Desktop/\u041f\u0430\u043f\u043a\u0430/\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435/CLion 2023.1.4/bin/ninja/win/x64/ninja.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "ImplementationOfAnAudioPlayerSimulation"
+			"value" : "ImplementationOfTheMobilePhoneSimulationProgram"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1254,7 +1254,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "ImplementatioOfAnAudioplayerSimulation_BINARY_DIR",
+			"name" : "ImplementationOfTheMobilePhoneSimulationProgram_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1263,10 +1263,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/cmake-build-debug"
+			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug"
 		},
 		{
-			"name" : "ImplementatioOfAnAudioplayerSimulation_IS_TOP_LEVEL",
+			"name" : "ImplementationOfTheMobilePhoneSimulationProgram_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1278,7 +1278,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "ImplementatioOfAnAudioplayerSimulation_SOURCE_DIR",
+			"name" : "ImplementationOfTheMobilePhoneSimulationProgram_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1287,43 +1287,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation"
-		},
-		{
-			"name" : "ImplementationOfAnAudioPlayerSimulation_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/cmake-build-debug"
-		},
-		{
-			"name" : "ImplementationOfAnAudioPlayerSimulation_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "ImplementationOfAnAudioPlayerSimulation_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation"
+			"value" : "C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

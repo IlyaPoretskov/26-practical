@@ -1,0 +1,5 @@
+C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/source/CMakeFiles/ImplementationOfTheMobilePhoneSimulationProgram.dir
+C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/source/CMakeFiles/edit_cache.dir
+C:/develop/Skillboxcpp/26-practical/ImplementationOfTheMobilePhoneSimulationProgram/cmake-build-debug/source/CMakeFiles/rebuild_cache.dir

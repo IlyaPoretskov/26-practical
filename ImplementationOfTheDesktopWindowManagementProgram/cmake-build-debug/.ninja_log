@@ -1,0 +1,6 @@
+# ninja log v5
+1	165	7237519419292809	build.ninja	f6378829544fd6d3
+1	351	7237482845267635	source/CMakeFiles/ImplementationOfTheDesktopWindowManagementProgram.dir/main.cpp.obj	74edba92321f3c59
+352	828	7237482849985023	source/ImplementationOfTheDesktopWindowManagementProgram.exe	f0711372988f6738
+3	336	7237519602784213	source/CMakeFiles/ImplementationOfTheDesktopWindowManagementProgram.dir/main.cpp.obj	74edba92321f3c59
+336	720	7237519606563864	source/ImplementationOfTheDesktopWindowManagementProgram.exe	f0711372988f6738
