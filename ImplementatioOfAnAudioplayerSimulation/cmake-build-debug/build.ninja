@@ -84,13 +84,6 @@ build source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/main.cpp.obj
   OBJECT_DIR = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir
   OBJECT_FILE_DIR = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir
 
-build source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/audio-player.cpp.obj: CXX_COMPILER__ImplementationOfAnAudioPlayerSimulation_unscanned_Debug C$:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/source/audio-player.cpp || cmake_object_order_depends_target_ImplementationOfAnAudioPlayerSimulation
-  DEP_FILE = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir\audio-player.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  INCLUDES = -IC:/develop/Skillboxcpp/26-practical/ImplementatioOfAnAudioplayerSimulation/include
-  OBJECT_DIR = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir
-  OBJECT_FILE_DIR = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ImplementationOfAnAudioPlayerSimulation
@@ -99,7 +92,7 @@ build source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/audio-player
 #############################################
 # Link the executable source\ImplementationOfAnAudioPlayerSimulation.exe
 
-build source/ImplementationOfAnAudioPlayerSimulation.exe: CXX_EXECUTABLE_LINKER__ImplementationOfAnAudioPlayerSimulation_Debug source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/main.cpp.obj source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/audio-player.cpp.obj
+build source/ImplementationOfAnAudioPlayerSimulation.exe: CXX_EXECUTABLE_LINKER__ImplementationOfAnAudioPlayerSimulation_Debug source/CMakeFiles/ImplementationOfAnAudioPlayerSimulation.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = source\CMakeFiles\ImplementationOfAnAudioPlayerSimulation.dir

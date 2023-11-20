@@ -1,75 +1,12 @@
 #pragma once
+
+#include <memory>
+#include <vector>
+#include <string>
 #include <ctime>
 #include <iostream>
 #include <iomanip>
-#include <string>
-#include <vector>
 #include <random>
-
-
-int rand_range(int start_r, int end_r);
-
-
-
-class Track
-{
-
-private:
-
-    std::string trackName;
-    std::tm dateOfCreation;
-    int seconds = 0;
-    bool pause = false;
-    bool isPlaying = false;
-
-public:
-
-    void inputTrack()
-    {
-        std::cout << "Input a track name: ";
-        std::cin >> trackName;
-
-        while (trackName.empty())
-        {
-            std::cerr << "Wrong input, please input again: " << std::endl;
-            std::cin >> trackName;
-        }
-
-        time_t temp = time(nullptr);
-        dateOfCreation = *localtime(&temp);
-        std::cout << "Input the creation date: " << std::endl;
-        std::cin >> std::get_time(&dateOfCreation, "%d/%m/%Y");
-
-        std::cout << "Input the duration of the track in seconds: " << std::endl;
-        //std::cin >> seconds;
-
-        while (seconds < 0 || seconds > 3599)
-        {
-            std::cerr << "Wrong input, please, input again: " << std::endl;
-            std::cin >> seconds;
-        }
-        return;
-    }
-
-    std::string getName()
-    {
-        return trackName;
-    }
-    std::tm getTime()
-    {
-        return dateOfCreation;
-    }
-    int getSeconds() const
-    {
-        return seconds;
-    }
-    bool isPlay() const
-    {
-        return isPlaying;
-    }
-
-    friend class Player;
-};
 
 
 
@@ -78,10 +15,33 @@ class Player
 
 private:
 
-    std::vector<Track *> PlayerVec;
-    Track* currentTrack;
+    class Track
+    {
+    public:
+
+        std::string trackName;
+        std::tm dateOfCreation{};
+        int seconds = 0;
+        bool pause = false;
+        bool isPlaying = false;
+    };
+    std::vector<std::unique_ptr<Track>> PlayerVec;
+
+
+    Track *currentTrack;
 
 public:
+
+    Player()
+    {
+        currentTrack = new Track();
+    }
+
+    ~Player()
+    {
+        PlayerVec.clear();
+        delete currentTrack;
+    }
 
     void inputPlayer()
     {
@@ -95,43 +55,33 @@ public:
             std::cin >> c;
         }
 
-        PlayerVec.resize(c);
-
         for (int i = 0; i < c; i++)
         {
-            PlayerVec[i]->inputTrack();
+            auto tmpTrack = std::make_unique<Track>();
 
-            bool f = false;
+            std::cout << "Input a track name: ";
+            std::cin >> tmpTrack->trackName;
 
-            for (int j = 0; j < i; j++)
+            std::cout << "Input the creation date: " << std::endl;
+            std::cin >> std::get_time(&tmpTrack->dateOfCreation, "%d/%m/%Y");
+
+            std::cout << "Input the duration of the track in seconds: " << std::endl;
+            std::cin >> tmpTrack->seconds;
+
+            while (tmpTrack->seconds < 0 || tmpTrack->seconds > 3599)
             {
-                /*if (PlayerVec[j]->trackName == PlayerVec[i]->trackName)
-                {
-                    f = true;
-                }*/
+                std::cerr << "Wrong input, please, input again: " << std::endl;
+                std::cin >> tmpTrack->seconds;
             }
 
-            while (f)
-            {
-                PlayerVec[i]->inputTrack();
-
-                f = false;
-
-                for (int j = 0; j < i; j++)
-                {
-                    if (PlayerVec[j]->trackName == PlayerVec[i]->trackName)
-                    {
-                        f = true;
-                    }
-                }
-            }
+            PlayerVec.push_back(std::move(tmpTrack));
         }
     }
 
     void play()
     {
-        if (!currentTrack->isPlaying) {
-
+        if (currentTrack && !currentTrack->isPlaying)
+        {
             int trackIndex = -1;
 
             std::cout << "Input track name: " << std::endl;
@@ -158,7 +108,8 @@ public:
                 std::cerr << "Wrong input, please, input again" << std::endl;
                 std::cin >> currentTrackName;
 
-                for (int i = 0; i < PlayerVec.size(); i++) {
+                for (int i = 0; i < PlayerVec.size(); i++)
+                {
                     if (currentTrackName == PlayerVec[i]->trackName)
                     {
                         trackIndex = i;
@@ -166,36 +117,47 @@ public:
                     }
                 }
             }
-            currentTrack = PlayerVec[trackIndex];
+            currentTrack = PlayerVec[trackIndex].get();
             currentTrack->isPlaying = true;
             currentTrack->pause = false;
         }
 
         std::cout << "Is playing: " << std::endl <<
-                     "Name: " << currentTrack->trackName << std::endl <<
-                     "Date of creation: " << std::put_time(&currentTrack->dateOfCreation, "%d/%m/%Y") << std::endl <<
-                     "Duration: " << currentTrack->seconds / 60 << ":" << currentTrack->seconds % 60 << std::endl;
+                  "Name: " << currentTrack->trackName << std::endl <<
+                  "Date of creation: " << std::put_time(&currentTrack->dateOfCreation, "%d/%m/%Y") << std::endl <<
+                  "Duration: " << currentTrack->seconds / 60 << ":" << currentTrack->seconds % 60 << std::endl;
     }
 
     void pause()
     {
-        currentTrack->pause = true;
-        std::cout << "Track has been paused" << std::endl;
+        if (currentTrack)
+        {
+            currentTrack->pause = true;
+            std::cout << "Track has been paused" << std::endl;
+        }
     }
 
     void next()
     {
-        int rIndex;
-        rIndex = rand_range(0, PlayerVec.size());
-        currentTrack->isPlaying = false;
-        currentTrack->pause = false;
+        if (currentTrack)
+        {
+            currentTrack->isPlaying = false;
+            currentTrack->pause = false;
+        }
 
-        currentTrack = PlayerVec[rIndex];
+        int rIndex;
+        srand(time(nullptr));
+        rIndex = rand() % PlayerVec.size();
+
+        currentTrack = PlayerVec[rIndex].get();
     }
 
     void stop()
     {
-        currentTrack->isPlaying = false;
-        std::cout << "Track has been stopped" << std::endl;
+        if (currentTrack)
+        {
+            currentTrack->isPlaying = false;
+            std::cout << "Track has been stopped" << std::endl;
+        }
     }
 };

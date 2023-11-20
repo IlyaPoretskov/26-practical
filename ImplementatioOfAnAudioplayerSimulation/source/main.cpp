@@ -5,7 +5,9 @@ using namespace std;
 int main()
 {
 
-    Player *player = nullptr;
+    auto *player = new Player();
+
+    std::vector<int> vec(0);
 
     player->inputPlayer();
 
@@ -51,5 +53,6 @@ int main()
         }
     }
     system("pause");
+    delete player;
     return 0;
 }
